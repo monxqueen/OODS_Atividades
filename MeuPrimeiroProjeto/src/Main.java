@@ -1,3 +1,5 @@
+import java.util.Date;
+
 public class Main {
 
 	public static void main(String[] args) {
@@ -8,6 +10,10 @@ public class Main {
 		Funcionario jorge = new Funcionario("789", "Jorge", clientes);
 	
 		Livro percyJackson = new Livro("Rick Riordan", 39.99);
+		
+		Aluguel aluguel = new Aluguel(new Date(), percyJackson, jorge, monique);
+		
+		Devolucao devolucao = new Devolucao(laura, percyJackson, new Date());
 		
 		System.out.println(laura.getNome());
 	}

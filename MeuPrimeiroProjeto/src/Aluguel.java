@@ -2,15 +2,13 @@ import java.util.Date;
 
 public class Aluguel {
 	private Date data;
-	private double valor;
 	private Livro livro;
 	private Funcionario funcionario;
 	private Cliente cliente;
 	
 	
-	public Aluguel(Date data, double valor, Livro livro, Funcionario funcionario, Cliente cliente) {
+	public Aluguel(Date data, Livro livro, Funcionario funcionario, Cliente cliente) {
 		this.data = data;
-		this.valor = valor;
 		this.livro = livro;
 		this.funcionario = funcionario;
 		this.cliente = cliente;
@@ -23,14 +21,6 @@ public class Aluguel {
 	
 	public void setData(Date data) {
 		this.data = data;
-	}
-	
-	public double getValor() {
-		return valor;
-	}
-	
-	public void setValor(double valor) {
-		this.valor = valor;
 	}
 	
 	public Livro getLivro() {
