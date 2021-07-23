@@ -7,6 +7,7 @@ public class Main {
 		
 		Funcionario jorge = new Funcionario("789", "Jorge", clientes);
 	
+		Livro percyJackson = new Livro("Rick Riordan", 39.99);
 		
 		System.out.println(laura.getNome());
 	}
