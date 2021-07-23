@@ -6,8 +6,9 @@ public class Main {
 		Cliente[] clientes = { laura, monique };
 		
 		Funcionario jorge = new Funcionario("789", "Jorge", clientes);
+	
 		
-		System.out.println(jorge.getClientes());
+		System.out.println(laura.getNome());
 	}
 
 }

@@ -1,8 +1,8 @@
 
 public class Funcionario {
-	String cpf;
-	String nome;
-	Cliente[] clientes;
+	private String cpf;
+	private String nome;
+	private Cliente[] clientes;
 	
 	public Funcionario(String cpf, String nome, Cliente[] clientes) {
 		this.cpf = cpf;
