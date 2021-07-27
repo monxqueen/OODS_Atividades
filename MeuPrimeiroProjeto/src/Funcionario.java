@@ -14,16 +14,8 @@ public class Funcionario {
 		return cpf;
 	}
 
-	public void setCpf(String cpf) {
-		this.cpf = cpf;
-	}
-
 	public String getNome() {
 		return nome;
-	}
-
-	public void setNome(String nome) {
-		this.nome = nome;
 	}
 
 	public Cliente[] getClientes() {
@@ -33,5 +25,4 @@ public class Funcionario {
 	public void setClientes(Cliente[] clientes) {
 		this.clientes = clientes;
 	}
-	
 }

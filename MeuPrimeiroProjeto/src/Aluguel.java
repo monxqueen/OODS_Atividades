@@ -5,7 +5,7 @@ public class Aluguel {
 	private Livro livro;
 	private Funcionario funcionario;
 	private Cliente cliente;
-	
+
 	
 	public Aluguel(Date data, Livro livro, Funcionario funcionario, Cliente cliente) {
 		this.data = data;
@@ -13,38 +13,56 @@ public class Aluguel {
 		this.funcionario = funcionario;
 		this.cliente = cliente;
 	}
-	
-			
+
 	public Date getData() {
 		return data;
 	}
 	
-	public void setData(Date data) {
-		this.data = data;
+	public String getNomeLivro() {
+		return livro.getNome();
 	}
 	
-	public Livro getLivro() {
-		return livro;
+	public String getAutorLivro() {
+		return livro.getAutor();
 	}
 	
-	public void setLivro(Livro livro) {
-		this.livro = livro;
+	public double getValorLivro() {
+		return livro.getValor();
 	}
 	
-	public Funcionario getFuncionario() {
-		return funcionario;
+	public String getNomeFuncionario() {
+		return funcionario.getNome();
 	}
 	
-	public void setFuncionario(Funcionario funcionario) {
-		this.funcionario = funcionario;
+	public String getCpfFuncionario() {
+		return funcionario.getCpf();
+	}
+	
+	public Cliente[] getClientesFuncionario() {
+		return funcionario.getClientes();
+	}
+	
+	public String getNomeCliente() {
+		return cliente.getNome();
+	}
+	
+	public String getCpfCliente() {
+		return cliente.getCpf();
+	}
+	
+	public String getTelefoneCliente() {
+		return cliente.getTelefone();
 	}
 	
 	public Cliente getCliente() {
 		return cliente;
 	}
 	
-	public void setCliente(Cliente cliente) {
-		this.cliente = cliente;
+	public Livro getLivro() {
+		return livro;
 	}
-
+	
+	public Funcionario getFuncionario() {
+		return funcionario;
+	}
 }

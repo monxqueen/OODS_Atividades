@@ -5,17 +5,18 @@ public class Main {
 	public static void main(String[] args) {
 		Cliente laura = new Cliente("123", "Laura", "819");
 		Cliente monique = new Cliente("456", "Monique", "8192");
+
 		Cliente[] clientes = { laura, monique };
 		
 		Funcionario jorge = new Funcionario("789", "Jorge", clientes);
 	
-		Livro percyJackson = new Livro("Rick Riordan", 39.99);
+		Livro percyJackson = new Livro("Rick Riordan", 39.99, "Percy Jackson");
 		
 		Aluguel aluguel = new Aluguel(new Date(), percyJackson, jorge, monique);
 		
-		Devolucao devolucao = new Devolucao(laura, percyJackson, new Date());
+		Devolucao devolucao = new Devolucao(aluguel, new Date());
 		
-		System.out.println(laura.getNome());
+		System.out.println(devolucao.getNomeLivro());
 	}
 
 }
