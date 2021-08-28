@@ -1,5 +1,6 @@
 package com.company;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 public class Sale {
@@ -40,8 +41,13 @@ public class Sale {
     private float calculateTotalSales(ListProducts products) {
         float totalVal = 0;
 
-        for(Product p : products.returnListProducts()) {
-            float discountedValue  =  p.getPrice() - (p.getPrice() * p.getDiscount_max() / 100);
+        for(ProductSale p : products.returnListProducts()) {
+            float discountedValue  = 0;
+
+            if(p.getDiscount() > 0) {
+                discountedValue  =  p.getProduct().getPrice() - (p.getProduct().getPrice() * p.getDiscount() / 100);
+            }
+
             totalVal+= discountedValue;
         }
 

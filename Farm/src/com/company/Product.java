@@ -2,7 +2,7 @@ package com.company;
 
 import java.util.Date;
 
-public class Product {
+public abstract class Product {
     private float price;
     private String description;
     private int stock;

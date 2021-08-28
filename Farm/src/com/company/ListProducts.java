@@ -3,38 +3,35 @@ package com.company;
 import java.util.ArrayList;
 
 public class ListProducts {
-    ArrayList<Product> saleProductArray;
+    ArrayList<ProductSale> saleProductArray;
 
     public ListProducts() {
-        this.saleProductArray = new ArrayList<Product>();
+        this.saleProductArray = new ArrayList<ProductSale>();
     }
 
-    public void add (Product product) {
+    public void add (ProductSale product) {
         this.saleProductArray.add(product);
     }
 
-    public void remove(Product product) {
+    public void remove(ProductSale product) {
         this.saleProductArray.remove(product);
     }
 
-    public ArrayList<Product> returnListProducts () {
+    public ArrayList<ProductSale> returnListProducts () {
         return saleProductArray;
     }
 
     public void list() {
         System.out.println("============================");
-        for(Product product : saleProductArray) {
+        for(ProductSale product : saleProductArray) {
             String typeProduct = "";
 
-            if(product instanceof Medicine)
+            if(product.getProduct() instanceof Medicine)
                 typeProduct = "Medicamento";
-            else if(product instanceof Cosmetic)
+            else if(product.getProduct() instanceof Cosmetic)
                 typeProduct = "Cosmético";
-            else
-                typeProduct = "Produto";
 
-
-            System.out.println("Nome do Produto: " + product.getDescription() + " | Tipo: " + typeProduct);
+            System.out.println("Nome do Produto: " + product.getProduct().getDescription() + " | Tipo: " + typeProduct);
         }
         System.out.println("============================");
     }
