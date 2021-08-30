@@ -1,5 +1,7 @@
 package com.company;
 
+import com.company.exception.DefaultException;
+
 import java.util.Date;
 
 public abstract class Product {
@@ -48,7 +50,7 @@ public abstract class Product {
         return discount_max;
     }
 
-    public void setDiscount_max(float discount_max) {
+    public void setDiscount_max(float discount_max) throws DefaultException {
         this.discount_max = discount_max;
     }
 
@@ -70,8 +72,6 @@ public abstract class Product {
 
 
     // Metodos
-
-
     public void decreaseStock(int value) {
         int newStock = stock - value;
 

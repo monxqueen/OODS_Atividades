@@ -1,8 +1,5 @@
 package com.company;
 
-import java.text.DecimalFormat;
-import java.util.ArrayList;
-
 public class Sale {
     private ListProducts products;
     private Client client;
