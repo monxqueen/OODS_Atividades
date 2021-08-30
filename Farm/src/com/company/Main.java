@@ -7,8 +7,7 @@ import static com.company.util.DateUtil.parseDate;
 
 public class Main {
 
-    public static void main(String[] args)  {
-
+    public static void main(String[] args) throws DefaultException {
         //Novo fornecedor
         Provider provider1 = new Provider("Fornecedor");
 
@@ -20,13 +19,9 @@ public class Main {
         Cosmetic cosmetic1 = new Cosmetic(12, "Batom", 12, parseDate("2023-01-01"), provider1);
         Medicine medicine1 = new Medicine(4, "Dipirona", 20, parseDate("2024-10-12"), provider1);
 
-        try {
-            cosmetic1.setDiscount_max(25);
-        } catch (DefaultException e) {
-            System.out.println(e);
-        }
 
 
+        cosmetic1.setDiscount_max(25);
 
         //Produtos para a venda
         ProductSale cosmeticSale = new ProductSale(cosmetic1, 10);
