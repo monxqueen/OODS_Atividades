@@ -1,21 +1,23 @@
 package com.company;
 
+import java.util.ArrayList;
+
 public class Sale {
-    private ListProducts products;
+    private ArrayList<ProductSale> products;
     private Client client;
     private float totalValue;
 
-    public Sale(ListProducts products, Client client) {
+    public Sale(ArrayList<ProductSale> products, Client client) {
         this.products = products;
         this.client = client;
         this.totalValue = calculateTotalSales(products);
     }
 
-    public ListProducts getProducts() {
+    public ArrayList<ProductSale> getProducts() {
         return products;
     }
 
-    public void setProducts(ListProducts products) {
+    public void setProducts(ArrayList<ProductSale> products) {
         this.products = products;
     }
 
@@ -35,20 +37,30 @@ public class Sale {
         this.totalValue = totalValue;
     }
 
-    private float calculateTotalSales(ListProducts products) {
+    private float calculateTotalSales(ArrayList<ProductSale> products) {
         float totalVal = 0;
 
-        for(ProductSale p : products.returnListProducts()) {
-            float discountedValue  = 0;
-
-            if(p.getDiscount() > 0) {
-                discountedValue  =  p.getProduct().getPrice() - (p.getProduct().getPrice() * p.getDiscount() / 100);
-            }
-
-            totalVal+= discountedValue;
+        for(ProductSale p : products) {
+            totalVal+= p.getValue();
         }
 
         return totalVal;
+    }
+
+
+    public void listProducts() {
+        System.out.println("============================");
+        for(ProductSale product : products) {
+            String typeProduct = "";
+
+            if(product.getProduct() instanceof Medicine)
+                typeProduct = "Medicamento";
+            else if(product.getProduct() instanceof Cosmetic)
+                typeProduct = "Cosmético";
+
+            System.out.println("Nome do Produto: " + product.getProduct().getDescription() + " | Tipo: " + typeProduct);
+        }
+        System.out.println("============================");
     }
 
 }

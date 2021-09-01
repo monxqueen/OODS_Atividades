@@ -20,13 +20,12 @@ public class ListSale {
 
     public void list() {
         System.out.println("~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-");
-
         for(Sale sale : saleArray) {
             DecimalFormat df = new DecimalFormat("0.00");
             System.out.println("CPF do Cliente: " + sale.getClient().getCpf());
             System.out.println("Valor total: R$" + df.format(sale.getTotalValue()));
             System.out.println("Lista de produtos: ");
-            sale.getProducts().list();
+            sale.listProducts();
             System.out.println("~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-");
         }
     }

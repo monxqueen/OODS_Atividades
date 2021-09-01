@@ -1,6 +1,5 @@
 package com.company;
 
-import com.company.exception.DefaultException;
 
 import java.util.Date;
 
@@ -50,7 +49,7 @@ public abstract class Product {
         return discount_max;
     }
 
-    public void setDiscount_max(float discount_max) throws DefaultException {
+    public void setDiscount_max(float discount_max) throws  Exception {
         this.discount_max = discount_max;
     }
 

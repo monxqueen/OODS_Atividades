@@ -1,13 +1,14 @@
 package com.company;
 
 
-import com.company.exception.DefaultException;
+
+import java.util.ArrayList;
 
 import static com.company.util.DateUtil.parseDate;
 
 public class Main {
 
-    public static void main(String[] args) throws DefaultException {
+    public static void main(String[] args) throws Exception {
         //Novo fornecedor
         Provider provider1 = new Provider("Fornecedor");
 
@@ -19,21 +20,19 @@ public class Main {
         Cosmetic cosmetic1 = new Cosmetic(12, "Batom", 12, parseDate("2023-01-01"), provider1);
         Medicine medicine1 = new Medicine(4, "Dipirona", 20, parseDate("2024-10-12"), provider1);
 
-
-
-        cosmetic1.setDiscount_max(25);
+//        cosmetic1.setDiscount_max(25);
 
         //Produtos para a venda
         ProductSale cosmeticSale = new ProductSale(cosmetic1, 10);
         ProductSale medicineSale = new ProductSale(medicine1, 10);
 
         //Lista para a primeira venda
-        ListProducts listProductsToSale = new ListProducts();
+        ArrayList<ProductSale> listProductsToSale = new ArrayList();
         listProductsToSale.add(cosmeticSale);
         listProductsToSale.add(medicineSale);
 
         //Segunda a venda
-        ListProducts productsToSale2 = new ListProducts();
+        ArrayList<ProductSale> productsToSale2 = new ArrayList();
         productsToSale2.add(cosmeticSale);
 
 

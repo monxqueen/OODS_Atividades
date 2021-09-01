@@ -33,7 +33,21 @@ public class ProductSale {
         return discount;
     }
 
+    public float getValue() {
+        return value;
+    }
+
+    public void setValue(float value) {
+        this.value = value;
+    }
+
     public void setDiscount(float discount) {
-        this.discount = discount;
+        if (discount > product.getDiscount_max()) {
+            this.discount = product.getDiscount_max();
+        } else if(discount < 0) {
+            this.discount = 0;
+        } else {
+            this.discount = discount;
+        }
     }
 }
