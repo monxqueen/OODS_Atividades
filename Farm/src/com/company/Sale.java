@@ -54,9 +54,9 @@ public class Sale {
             String typeProduct = "";
 
             if(product.getProduct() instanceof Medicine)
-                typeProduct = "Medicamento";
+                typeProduct = "Medicamento - " + product.getProduct().getType();
             else if(product.getProduct() instanceof Cosmetic)
-                typeProduct = "Cosmético";
+                typeProduct = "Cosmético - " + product.getProduct().getType();
 
             System.out.println("Nome do Produto: " + product.getProduct().getDescription() + " | Tipo: " + typeProduct);
         }

@@ -1,8 +1,8 @@
 package com.company;
 
-
-
 import java.util.ArrayList;
+
+import com.company.MedicineType;
 
 import static com.company.util.DateUtil.parseDate;
 
@@ -17,8 +17,8 @@ public class Main {
         Client client2 = new Client("134.751.714-65");
 
         //Produtos
-        Cosmetic cosmetic1 = new Cosmetic(12, "Batom", 12, parseDate("2023-01-01"), provider1);
-        Medicine medicine1 = new Medicine(4, "Dipirona", 20, parseDate("2024-10-12"), provider1);
+        Cosmetic cosmetic1 = new Cosmetic(12, "Batom", 12, parseDate("2023-01-01"), provider1, CosmeticType.OLHOS_LABIOS.getCosmeticTypeDescription());
+        Medicine medicine1 = new Medicine(4, "Digest Plus", 20, parseDate("2024-10-12"), provider1, MedicineType.DIGESTAO.getMedicineTypeDescription());
 
 //        cosmetic1.setDiscount_max(25);
 

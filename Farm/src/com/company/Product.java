@@ -10,14 +10,16 @@ public abstract class Product {
     private float discount_max;
     private Date validate;
     private Provider provider;
+    private String type;
 
-    public Product(float price, String description, int stock, float discount_max, Date validate, Provider provider) {
+    public Product(float price, String description, int stock, float discount_max, Date validate, Provider provider, String type) {
         this.price = price;
         this.description = description;
         this.stock = stock;
         this.discount_max = discount_max;
         this.validate = validate;
         this.provider = provider;
+        this.type = type;
     }
 
     //Getters and setters
@@ -83,6 +85,10 @@ public abstract class Product {
 
     public  void addStock(int value) {
         this.stock = stock + value;
+    }
+
+    public String getType(){
+        return this.type;
     }
 
 }
